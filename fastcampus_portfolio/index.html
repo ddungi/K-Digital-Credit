@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastCampus Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="reset.css"/> 
+    <link rel="stylesheet" type="text/css" href="style.css"/> 
+</head>
+<body>
+    <header>
+       <a href="index.html" id="logo" >FastCampus Portfolio</a> 
+        <nav id="nav">
+            <ul>
+                <li class="on"><a href="#">사진들 보기</a></li>
+                <li><a href="#">사진 올리기</a></li>
+                <li><a href="#">내 정보</a></li>
+                <li><a href="#">팔로우 보기</a></li>
+                <li><a href="#">팔로워 보기</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="logout" >Logout</a> 
+    </header>
+   <main>
+    <aside>
+        <div id="view_option">보기 옵션</div>
+        <ul class="first_option">
+           <li class="option_on"><a href="#">최신순 보기</a></li>
+            <li><a href="#">좋아요 순 보기</a></li>
+        </ul>
+        <ul class="section_option">
+            <li><a href="#">내 사진 사진</a></li>
+            <li><a href="#">좋아요 한 사진</a></li>
+            <li><a href="#">팔로우 회원 사진</a></li>
+        </ul>
+    </aside>
+
+      <section id="contents">
+       <article class="section_intro">
+            <h1 class="main_intro">패스트캠퍼스 포트폴리오입니다.</h1>
+            <span class="sub_intro"> CSS 수업을 듣고 만든 두번째 과제입니다.<br>
+                HTML, CSS까지  적용하여 만들었습니다.</span>     
+       </article>
+       <article class="section_pictures">
+           <ul>
+               <li>
+                  <img src="img/photo_1.jpg" alt="홍길동" class="photo">
+                   <div class="info">
+                      <div class="like_on"></div>
+                      <div class="author">홍길동</div>
+                      <div class="description">여행중 발견한 풍경</div>
+                   </div>
+               </li>
+               <li>
+                   <img src="img/photo_2.jpg" alt="전우치" class="photo">
+                   <div class="info">
+                      <div class="like"><img src="img/heart_off.png" alt="heart"></div>
+                      <div class="author">전우치</div>
+                      <div class="description">누렁이랑 뒷산에 오르다</div>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/photo_3.jpg" alt="임꺽정" class="photo">
+                    <div class="info">
+                      <div class="like"><img src="img/heart_off.png" alt="heart"></div> 
+                      <div class="author">임꺽정</div>
+                      <div class="description">공무원시험 합격한 여자친구</div>
+                   </div>
+                </li>
+                <li>
+                   <img src="img/photo_4.jpg" alt="성춘향" class="photo">
+                    <div class="info">
+                      <div class="like"><img src="img/heart_off.png" alt="heart"></div>  
+                      <div class="author">성춘향</div>
+                      <div class="description">두시간 반만에 성공했어요!</div>
+                   </div>
+                </li>
+                <li>
+                   <img src="img/photo_5.jpg" alt="연홍부" class="photo">
+                    <div class="info">
+                      <div class="like"><img src="img/heart_off.png" alt="heart"></div>  
+                      <div class="author">연홍부</div>
+                      <div class="description">나를 집사로 간택한 길냥이</div>
+                   </div>
+                </li>
+               </ul>
+       </article>
+      </section>
+      <a href="#" id="camera">
+             <img src="img/camera.png" alt="camera">
+      </a>
+    </main>
+   <footer id="footer">
+       <ul>
+           <li><a href="#">회사소개</a></li>
+           <li><a href="#">인재채용</a></li>
+           <li><a href="#">이용약관</a></li>
+           <li><a href="#">개인정보 보호</a></li>
+           <li><a href="#">고객센터</a></li>
+       </ul>
+   </footer>
+</body>
+</html>
