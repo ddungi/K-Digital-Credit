@@ -1,0 +1,362 @@
+header {
+    display: grid;
+    grid-template-columns: 500px 1fr 84px;
+    grid-template-areas: "logo nav logout";
+    align-items: center;
+    height: 64px;
+    width: 100%;
+    background-color: #ff4500;
+    position: fixed;
+
+  }
+
+#logo{
+    grid-area: logo;
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+    margin-left: 24px;
+}
+
+#nav{
+    grid-area: nav;
+}
+
+.logout{
+    grid-area:logout;
+    text-decoration: none;
+    color:#fff;
+    font-size: 1.25rem;
+    margin-left: 10px;
+}
+
+.logout:hover{
+    color:rgba(255,255,255,0.5)
+}
+
+#nav li {
+    display: inline-block;
+    margin-right: 36px;
+    font-size: 1.25rem;
+    text-decoration: none;
+    color:#fff;
+    cursor: pointer;
+}
+
+#nav li:hover{
+    color:rgba(255,255,255,0.5);
+    
+}
+
+#nav .on{
+    border-bottom: 4px solid gray;
+    padding: 20px 0;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-areas: "aside contents" ;  
+}
+
+
+main aside{
+    grid-area: aside;
+    background-color: rgb(34, 36, 38);
+    border-right-color: rgb(60, 65, 68);
+    position: fixed;
+    top: 64px;
+    height: 100%;
+    width: 240px;
+    border-right: 1px solid #d3d3d3;
+    
+}
+
+
+
+main .dep {display: none;}
+main.gallery .dep._gallery,
+main.upload .dep._upload,
+main.myinfo .dep._myinfo{
+    display: block;
+}
+
+
+main aside .aside{
+    font-size: 1.5em;
+    font-weight: 700;
+    padding:32px 0 0 32px;
+    color: rgb(152, 143, 129);
+}
+
+main aside li{
+    padding: 8px 34px;
+    font-size: 1.25em;
+    line-height: 1.5em;
+    cursor: pointer;
+    
+}
+
+main aside ul li.on{
+    background-color: #ddd;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    color: gray;
+  }
+  
+main aside ul li:hover{
+    color: white;
+    background-color: #444;
+  }
+
+
+
+main.gallery aside .first_option{
+    margin: 24px 0;
+}
+
+main .contents{
+    grid-area: contents;
+    min-height: calc(100vh - 196px);
+}
+
+main.gallery .dep._gallery.contents{
+    display: grid;
+    background-color: rgb(27, 29, 30);
+    grid-template-rows: 350px 1fr;
+    grid-template-areas: "intro"
+                        "pictures";
+}
+
+main.gallery .dep._gallery .section_intro {
+    grid-area: intro;
+    padding: 120px 80px;
+    border-bottom: 1px solid #d3d3d3;
+    font-size: 1.3rem;
+    line-height: 1.3em;
+  }
+
+main.gallery .section_intro .main_intro{
+    font-size: 1.8em;
+    font-weight: 700;
+    line-height: 50px;
+    margin-bottom: 15px;
+}
+
+main.gallery .section_pictures .hidden{
+    display: none;
+}
+
+main.gallery .section_intro .sub_intro{
+    font-size: 1.2em; 
+    line-height: 1.4em;  
+}
+
+main.gallery .contents #gallery{
+    grid-area: pictures;
+    padding: 16px;
+}
+
+main.gallery .section_pictures article{
+    display: inline-block;
+    padding: 24px;
+    margin: 8px;
+    background-color: rgb(24,26,27);
+    border-radius: 12px;
+}
+
+
+main.gallery .section_pictures .photo{
+    width: 440px; 
+    height: 320px;
+    object-fit: cover;
+}
+
+main.gallery .section_pictures .info{
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 32px 1fr;
+    grid-template-areas: "like author"
+                        "like description";
+    margin:20px 10px 0;
+}
+
+
+
+.section_pictures .info .like{
+    grid-area: like;  
+    padding-top: 15px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: url(../img/interface/heart_off.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    color: gray;
+ }
+
+.section_pictures .info .like:hover{
+   filter: brightness(50%);
+}
+
+.section_pictures .info .like.on{
+    grid-area: like; 
+    background-image: url("../img/interface/heart_on.png");
+    color: white;
+}
+
+
+.section_pictures .info .author{
+    grid-area: author;  
+    line-height: 24px;
+    font-weight: 700;
+    color: #e8e6e3;
+    font-size: 1.3em;
+    
+}
+
+.section_pictures .info .description{
+    grid-area: description;
+    font-size: 1.2em;  
+    color: rgb(152, 143, 129);    
+}
+
+#upload{
+    margin:64px 0 0 0;
+    padding:48px;
+    font-size: 16px;
+
+}   
+
+#upload .instruction{
+    font-size: 1.3rem;
+    margin:0 0 24px;
+}
+
+
+#upload .description{
+    width: 320px;
+    height: 32px;
+    padding: 0 8px;
+    line-height: 32px;
+    font-size: 1rem;
+    
+}
+
+#upload .descLength{
+    color: rgb(152, 143, 129);
+    margin-left: 5px;
+}
+
+#upload input {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+#upload .button{
+    background-color: rgb(204, 55, 0);
+    color:rgb(232, 230, 227);
+    display: inline-block;
+    padding: 14px 24px;
+    cursor:pointer;
+}
+
+#myinfo {
+    margin-top: 64px;
+}
+
+#myinfo table{
+    margin: 48px 48px 24px;
+    display: block;
+    font-size: 1.3rem;
+}
+
+#myinfo table tr{
+    border-bottom: 1px solid rgb(58, 62, 65);
+}
+
+#myinfo table td{
+    padding:20px;
+   
+}
+
+#myinfo .item{
+    color: rgb(152, 143, 129);
+}    
+
+#myinfo td label{
+    margin:0 10px 0 0;
+}
+
+
+#myinfo .mi-dep.bt{
+    display: inline-block;
+    padding: 14px 24px;
+    background-color: #ff4500;
+    cursor: pointer;
+    margin: 2px 0 0 15px;
+
+}
+
+#myinfo .buttons{
+    margin-left: 45px ;
+}
+
+
+#footer{
+    background-color: #383838;
+    padding: 64px 0;
+    font-size: 1.2rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+#footer li {
+    display: inline-block;
+    padding: 0 48px;
+  }
+
+#footer li a{
+    text-decoration: none;
+    color: #fff;
+}
+#footer li a:hover{
+    color: rgba(255,255,255,0.5)
+}
+
+#myinfo > div.non-edit .mi-dep.edit,
+#myinfo > div.edit .mi-dep.non-edit{
+    display: none;
+}
+
+#myinfo #ip-intro{
+    width: 350px;
+    height: 30px;
+    font-size: 1rem;
+}
+
+#camera{
+    position: fixed;
+    right: 36px;
+    bottom: 36px;
+    z-index: 2;
+    background-color: rgb(204, 55, 0);
+    border-radius: 50%;
+    cursor: pointer;
+    width: 88px;
+    height: 88px;
+    box-shadow: rgb(0 0 0 / 50%) 1px 1px 2px;
+   
+}
+
+#camera img{
+    position: relative;
+    left: 20px;
+    top: 20px;
+    width: 44px;
+    height: 44px; 
+
+}
