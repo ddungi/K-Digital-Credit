@@ -1,4 +1,4 @@
-  // 화면 시작시 실행되는 함수 
+ // 화면 시작시 실행되는 함수 
  function init(){
     showPhotos();
     showMyInfo();
@@ -44,10 +44,7 @@ function showPhotos(){
     })  
 }
 
-//정렬, 필터 함수
-var sort = function (a, b) { return (a.idx > b.idx) ? -1 : 1 };
-var filter = function (it) { return true; };
-
+//sorts 정렬 함수 묶음
 var sorts = {
     recent :function(a,b){return (a.idx > b.idx) ? -1 : 1},
     like: function(a,b){return (a.likes > b.likes) ? -1 : 1}
@@ -56,6 +53,7 @@ var sorts = {
 //현재 정렬 지정
 var sort=sorts.recent;
 
+//filters 필터 함수 묶음
 var filters = {
     all:function(it){return true;},
     mine:function(it){return it.user_id === my_info.id;},
