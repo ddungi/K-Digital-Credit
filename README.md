@@ -3,6 +3,8 @@
 
 ## phtoupload
 
+<br>
+
 ![image](https://user-images.githubusercontent.com/88040158/154393513-6627644e-d82e-4953-9c58-dd43333758c3.png)
 *전체 화면을 한번에 표시하기 위해 화면비율을 줄였습니다. 
 <br>
@@ -16,7 +18,8 @@
 
 ## fastcampus_portfolio
 
-
+<br>
+  
 ![image](https://user-images.githubusercontent.com/88040158/154393811-6984edf2-e992-4c5c-8a1a-1ca77f4d8ca3.png)
 *전체 화면을 한번에 표시하기 위해 화면비율을 줄였습니다. 
 
@@ -44,7 +47,9 @@
 <BR>
 
 ## fastcampus_portfolio_with_JS
+  
 <br>
+  
 ![1](https://user-images.githubusercontent.com/88040158/156130810-233faca5-7f75-4b4f-9367-69072b6a36b0.PNG)
 
 *전체 화면을 한번에 표시하기 위해 화면비율을 줄였습니다. 
@@ -91,6 +96,7 @@ showPhotos()를 불러오게 구현했습니다.
 - 사진 올리기 화면은 대부분 HTML 요소로 구성하였습니다.
 
 <br>
+  
 ![5](https://user-images.githubusercontent.com/88040158/156142462-faf8759f-c502-44b1-b603-9fdf8add4a9e.png)
 
 - function setDescLength(){...} 
@@ -114,6 +120,7 @@ showPhotos()를 불러오게 구현했습니다.
 > - 수정 버튼을 누르면 input을 수정할 수 있게 만들었습니다.
 
 <br>
+  
 ![8](https://user-images.githubusercontent.com/88040158/156143622-df06f640-f51a-4790-9fa1-434caeefc004.png)
 
 - function updateMyInfo(){...}
