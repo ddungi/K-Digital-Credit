@@ -44,7 +44,7 @@
 <BR>
 
 ## fastcampus_portfolio_with_JS
-
+<br>
 ![1](https://user-images.githubusercontent.com/88040158/156130810-233faca5-7f75-4b4f-9367-69072b6a36b0.PNG)
 
 *전체 화면을 한번에 표시하기 위해 화면비율을 줄였습니다. 
@@ -83,12 +83,14 @@ showPhotos()를 불러오게 구현했습니다.
 > -  '좋아요' 한 사진은 나의 '좋아요' 배열에서 제외시키고 해당 사진의 좋아요 수를 내리게 만들었습니다. 
 > - showPhotos에 addEventListener 를 이용해 클릭하면 위 두 가지 상황이 일어나게 구현했습니다.  
 > - 마지막에 showPhotos() 를 실행해 모든 화면을 다시 불러왔습니다.
+
 <br>
 
 ![4](https://user-images.githubusercontent.com/88040158/156142408-e2fe262a-6592-4e36-9705-e4f95b8ba8fd.PNG)
 
 - 사진 올리기 화면은 대부분 HTML 요소로 구성하였습니다.
 
+<br>
 ![5](https://user-images.githubusercontent.com/88040158/156142462-faf8759f-c502-44b1-b603-9fdf8add4a9e.png)
 
 - function setDescLength(){...} 
@@ -102,6 +104,7 @@ showPhotos()를 불러오게 구현했습니다.
 > - data.js 내 my_info를 불러와 정보를 보여주는 함수 입니다.  
 > - checkbox 타입의 input은 모든 요소의 체크를 취소하고 forEach문을 통해 재선택해 나타내게 하였습니다.
 
+<br>
 
 ![7](https://user-images.githubusercontent.com/88040158/156143619-2180f5eb-43ea-4138-85ba-e14799c22313.PNG)
 
@@ -110,12 +113,14 @@ showPhotos()를 불러오게 구현했습니다.
 > - 반대로 확인 버튼을 누르면 확인, 취소 버튼이 사라지고 수정 버튼이 사라지게 구현했습니다.
 > - 수정 버튼을 누르면 input을 수정할 수 있게 만들었습니다.
 
+<br>
 ![8](https://user-images.githubusercontent.com/88040158/156143622-df06f640-f51a-4790-9fa1-434caeefc004.png)
 
 - function updateMyInfo(){...}
 > - 수정 버튼을 누르고 입력한 값을 data.js에 저장하게 구현했습니다. 
 > - 취소 버튼을 누르면 입력했던 값을 무시하고 저장되었던 값을 다시 표시하게 구현했습니다. 
 
+<br>
 - 문제
 > - 좋아요를 토글하는 과정에서 화면을 계속 재호출하는 것은 메모리 낭비가 클 것으로 고려된다.
 > : 함수를 각 좋아요 html 부분에 적용하거나 showPhotos 함수에 연결해주는 방식이 좋을 것으로 예상된다.
