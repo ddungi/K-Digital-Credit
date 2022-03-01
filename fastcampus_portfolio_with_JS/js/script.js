@@ -1,3 +1,10 @@
+  // 화면 시작시 실행되는 함수 
+ function init(){
+    showPhotos();
+    showMyInfo();
+}
+
+//메뉴 css 변경 및 화면 변경
 function setMenu(_menu){
     var menus = document.querySelectorAll("#nav li");
     menus.forEach(function(menu){
@@ -7,52 +14,7 @@ function setMenu(_menu){
     document.querySelector("main").className = _menu;
 }
 
-function setDescLength(){
-    var descLengthSpan = document.querySelector("span.descLength");
-    var descLengthInput = document.querySelector("input.description");
-    descLengthSpan.innerHTML =descLengthInput.value.length + "/20";
-}
-
-function showMyInfo(){
-    document.querySelector("#myInfoId").innerHTML=my_info.id;
-    document.querySelector("#myInfoName").innerHTML=my_info.user_name;
-    document.querySelector("#sp-intro").innerHTML=my_info.introduction;
-    document.querySelector("#ip-intro").value=my_info.introduction;
-    document.querySelector("#myinfo input[type=radio][value=" + my_info.as + "]").checked=true;
-    
-    document.querySelectorAll("#myinfo input[type=checkbox]").forEach(function(checkbox){
-        checkbox.checked=false;
-    });
-    my_info.interest.forEach(function(interest){
-        document.querySelector(
-            "#myinfo input[type=checkbox][value=" + interest + "]").checked=true;
-    });
-    
-}
-
-
-function setEditMyInfo(on){
-    document.querySelector("#myinfo > div").className = on ? "edit" :"non-edit";
-    document.querySelectorAll("#myinfo input").forEach(function(input){
-        input.disabled=!on;
-    })
-    showMyInfo();
-}
-
-function updateMyInfo(){
-    my_info.introduction=document.querySelector("#ip-intro").value;
-    my_info.as=document.querySelector("#myinfo input[type=radio]:checked").value;
-    var interests = [];
-    document.querySelectorAll("#myinfo input[type=checkbox]:checked").forEach(function (checked){
-        interests.push(checked.value);
-    });
-    my_info.interest=interests;
-
-    setEditMyInfo(false);
-    showMyInfo();
-
-}
-
+//사진들 보기 화면
 function showPhotos(){
     //현존하는 썸네일들 삭제
     var existingNodes = document.querySelectorAll("#gallery article:not(.hidden)");
@@ -63,6 +25,7 @@ function showPhotos(){
     var filtered =photos.filter(filter);
     filtered.sort(sort);
 
+    //사진들 보기에 data.js 데이터 불러옴
     var gallery = document.querySelector("#gallery");
 
     filtered.forEach(function (photo){
@@ -81,6 +44,53 @@ function showPhotos(){
     })  
 }
 
+//정렬, 필터 함수
+var sort = function (a, b) { return (a.idx > b.idx) ? -1 : 1 };
+var filter = function (it) { return true; };
+
+var sorts = {
+    recent :function(a,b){return (a.idx > b.idx) ? -1 : 1},
+    like: function(a,b){return (a.likes > b.likes) ? -1 : 1}
+}
+
+//현재 정렬 지정
+var sort=sorts.recent;
+
+var filters = {
+    all:function(it){return true;},
+    mine:function(it){return it.user_id === my_info.id;},
+    like:function(it){return my_info.like.indexOf(it.idx) > -1;},
+    follow:function(it){return my_info.follow.indexOf(it.user_id) > -1;} 
+}
+
+//현재 필터 지정
+var filter=filters.all;
+
+function setSort(_sort){
+    var sortButtons = document.querySelectorAll("#sorts > li");
+    sortButtons.forEach(function (sortButton){
+        sortButton.classList.remove("on");
+    })
+    document.querySelector("#sorts ." + _sort).classList.add("on");
+
+    sort =sorts[_sort];
+    showPhotos();
+}
+
+function setFilter(_filter){
+    var filterButtons = document.querySelectorAll("#filters > li");
+    filterButtons.forEach(function (filterButton){
+        filterButton.classList.remove("on");
+    })
+    document.querySelector("#filters ." + _filter).classList.add("on");
+
+    filter =filters[_filter];
+    showPhotos();
+}
+
+
+
+//좋아요 (좋아요 수 불러오기, 하트 클릭)
 function toggleLike(idx){
     if (my_info.like.indexOf(idx) === -1){
         my_info.like.push(idx);
@@ -106,50 +116,51 @@ function toggleLike(idx){
     showPhotos();
 }
 
-var sort = function (a, b) { return (a.idx > b.idx) ? -1 : 1 };
-var filter = function (it) { return true; };
-
-
-var sorts = {
-    recent :function(a,b){return (a.idx > b.idx) ? -1 : 1},
-    like: function(a,b){return (a.likes > b.likes) ? -1 : 1}
+//사진 올리기의 글자 수
+function setDescLength(){
+    var descLengthSpan = document.querySelector("span.descLength");
+    var descLengthInput = document.querySelector("input.description");
+    descLengthSpan.innerHTML =descLengthInput.value.length + "/20";
 }
 
-var sort=sorts.recent;
-
-var filters = {
-    all:function(it){return true;},
-    mine:function(it){return it.user_id === my_info.id;},
-    like:function(it){return my_info.like.indexOf(it.idx) > -1;},
-    follow:function(it){return my_info.follow.indexOf(it.user_id) > -1;} 
+//데이터의 내 정보 불러오기
+function showMyInfo(){
+    document.querySelector("#myInfoId").innerHTML=my_info.id;
+    document.querySelector("#myInfoName").innerHTML=my_info.user_name;
+    document.querySelector("#sp-intro").innerHTML=my_info.introduction;
+    document.querySelector("#ip-intro").value=my_info.introduction;
+    document.querySelector("#myinfo input[type=radio][value=" + my_info.as + "]").checked=true;
+    
+    document.querySelectorAll("#myinfo input[type=checkbox]").forEach(function(checkbox){
+        checkbox.checked=false;
+    });
+    my_info.interest.forEach(function(interest){
+        document.querySelector(
+            "#myinfo input[type=checkbox][value=" + interest + "]").checked=true;
+    });
+    
 }
 
-var filter=filters.all;
-
-function setSort(_sort){
-    var sortButtons = document.querySelectorAll("#sorts > li");
-    sortButtons.forEach(function (sortButton){
-        sortButton.classList.remove("on");
+//수정 모드, 저장 모드 설정
+function setEditMyInfo(on){
+    document.querySelector("#myinfo > div").className = on ? "edit" :"non-edit";
+    document.querySelectorAll("#myinfo input").forEach(function(input){
+        input.disabled=!on;
     })
-    document.querySelector("#sorts ." + _sort).classList.add("on");
-
-    sort =sorts[_sort];
-    showPhotos();
-}
-
-function setFilter(_filter){
-    var filterButtons = document.querySelectorAll("#filters > li");
-    filterButtons.forEach(function (filterButton){
-        filterButton.classList.remove("on");
-    })
-    document.querySelector("#filters ." + _filter).classList.add("on");
-
-    filter =filters[_filter];
-    showPhotos();
-}
-
- // 화면 시작시 실행되는 함수 
-function init(){
-    showPhotos();
     showMyInfo();
+}
+
+//업데이트한 내 정보 데이터 저장
+function updateMyInfo(){
+    my_info.introduction=document.querySelector("#ip-intro").value;
+    my_info.as=document.querySelector("#myinfo input[type=radio]:checked").value;
+    var interests = [];
+    document.querySelectorAll("#myinfo input[type=checkbox]:checked").forEach(function (checked){
+        interests.push(checked.value);
+    });
+    my_info.interest=interests;
+
+    setEditMyInfo(false);
+    showMyInfo();
+
 }
