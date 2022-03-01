@@ -170,7 +170,8 @@ main.gallery .section_pictures article{
 main.gallery .section_pictures .photo{
     width: 440px; 
     height: 320px;
-    object-fit: cover;
+    background-size: cover;
+    border-radius: 4px;
 }
 
 main.gallery .section_pictures .info{
