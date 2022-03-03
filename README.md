@@ -3,7 +3,7 @@
 
 ## phtoupload
 
-<br>
+<BR>
 
 ![image](https://user-images.githubusercontent.com/88040158/154393513-6627644e-d82e-4953-9c58-dd43333758c3.png)
 *전체 화면을 한번에 표시하기 위해 화면비율을 줄였습니다. 
@@ -18,8 +18,8 @@
 
 ## fastcampus_portfolio
 
-<br>
-  
+<BR>
+
 ![image](https://user-images.githubusercontent.com/88040158/154393811-6984edf2-e992-4c5c-8a1a-1ca77f4d8ca3.png)
 *전체 화면을 한번에 표시하기 위해 화면비율을 줄였습니다. 
 
@@ -42,15 +42,14 @@
 
 - 문제
 > - 카메라 이미지와 배경을 따로 고정하여 적용하였다.
-  
 > : 최종 참고용 자료를 보니 상위 클래스에 위치와 포지션만 저장해주고 그 내부에 div를 생성하고 background-image를 적용해 카메라 사진을 넣어주었다. 
 
 <BR>
 
 ## fastcampus_portfolio_with_JS
-  
+
 <br>
-  
+
 ![1](https://user-images.githubusercontent.com/88040158/156130810-233faca5-7f75-4b4f-9367-69072b6a36b0.PNG)
 
 *전체 화면을 한번에 표시하기 위해 화면비율을 줄였습니다. 
@@ -70,12 +69,15 @@
 > - data.js. 내 my_info에 저장된 내가 누른 좋아요가 화면에 적용되게끔 만들었습니다. 
 
 ![2](https://user-images.githubusercontent.com/88040158/156142038-70280448-eacc-498a-b37f-e328817ac18c.PNG)
+
 <br>
 
 ![3](https://user-images.githubusercontent.com/88040158/156142145-cc64806f-2a95-4101-acb5-fccd6ab7f144.PNG)
+
 <br>
 
 ![33](https://user-images.githubusercontent.com/88040158/156142236-ad581fb4-7cb3-4849-9b9d-31627168dbf9.PNG)
+
 <br>
 
 
@@ -97,7 +99,7 @@ showPhotos()를 불러오게 구현했습니다.
 - 사진 올리기 화면은 대부분 HTML 요소로 구성하였습니다.
 
 <br>
-  
+
 ![5](https://user-images.githubusercontent.com/88040158/156142462-faf8759f-c502-44b1-b603-9fdf8add4a9e.png)
 
 - function setDescLength(){...} 
@@ -121,7 +123,7 @@ showPhotos()를 불러오게 구현했습니다.
 > - 수정 버튼을 누르면 input을 수정할 수 있게 만들었습니다.
 
 <br>
-  
+
 ![8](https://user-images.githubusercontent.com/88040158/156143622-df06f640-f51a-4790-9fa1-434caeefc004.png)
 
 - function updateMyInfo(){...}
@@ -129,10 +131,29 @@ showPhotos()를 불러오게 구현했습니다.
 > - 취소 버튼을 누르면 입력했던 값을 무시하고 저장되었던 값을 다시 표시하게 구현했습니다. 
 
 <br>
-  
+
 - 문제
-> - 좋아요를 토글하는 과정에서 화면을 계속 재호출하는 것은 메모리 낭비가 클 것으로 고려된다.
-  
+> - 좋아요를 토글하는 과정에서 모든 썸네일을 계속 재호출하는 것의 메모리 낭비 문제
 > : 함수를 각 좋아요 html 부분에 적용하거나 showPhotos 함수에 연결해주는 방식이 좋을 것으로 예상된다.
 
+<br>
+
+
+## final-project
+
+![fp1](https://user-images.githubusercontent.com/88040158/156482115-16548a87-77ed-456a-b9ce-1842a23c01ce.png)
+
+![fp2](https://user-images.githubusercontent.com/88040158/156482122-dae0e208-d1d3-4ced-b414-9277a0e2f3d5.PNG)
+
+*전체 화면을 한번에 표시하기 위해 화면비율을 줄였습니다. 
+- 유튜브 클론 프로젝트입니다.
+<br>
+
+- html의 tag를 div가 아닌 semantic tag에 맞게 사용하여 가독성을 높이려 하였습니다.
+- 맨 위의 네비게이션바, 사이드바와 컨텐츠의 큰 구성, 썸네일과 정보의 구성은 grid를 이용해 구성하였습니다. 
+- function setMenu(_menu){...}
+> - 홈과 사용이력 사이트를 이동하고 현재 위치가 어디인지 보여주는 함수입니다.
+- function showVideoClips() {...}
+> - data.js의 데이터를 불러와 썸네일, 프로필사진, 제목, 가수, 상태 정보를 보여주는 함수입니다.
+> - cloneNode()를 이용해 빈 복제 공간을 만들어 반복되는 값을 받아왔습니다. 
 
